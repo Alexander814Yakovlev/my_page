@@ -1,0 +1,29 @@
+{% extends 'horoscope/base.html' %}
+
+{% load static %}
+{% load my_filter %}
+
+{% block title %}
+Знак зодиака - {{ description.1|split|first }}
+{% endblock %}
+
+{% block css_add %}
+    <link rel="stylesheet" href='{% static "horoscope/css/item.css" %}'>
+{% endblock %}
+
+{% block content %}   
+    {% if description is None %}
+        <h2>Неправильный знаке зодиака - {{ sign|title }}</h2>
+        <p class="image">
+            😵‍💫
+        </p>
+    {% else %}
+        <h2>Информация о знаке зодиака - {{ description.1|split|first }}</h2>
+        <p class="image">
+            {{ description.0 }}
+        </p><br>
+        <p class="description">
+            {{ description.1 }}
+        </p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 90vh;
+}
+
+a.sign-link {
+  text-decoration: none;
+}
+
+a.sign-link:hover {
+  opacity: 0.8;
+}
+
+.sign {
+  font-size: 170px;
+}
+
+.sign-title {
+  text-align: center;
+  font-size: 24px;
+  color: #ffffff;
+  background-color: rgb(0, 0, 0, 0.6);
+  border-radius: 8px;
+  width: fit-content;
+  margin: auto;
+}

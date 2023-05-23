@@ -1,0 +1,27 @@
+{% extends 'horoscope/base.html' %}
+
+{% load static %}
+{% load my_filter %}
+
+{% block title %}
+Знаки зодиака
+{% endblock %}
+
+{% block css_add %}
+    <link rel='stylesheet' href='{% static "horoscope/css/menu.css" %}'>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% for key, value in zodiac.items %}
+            <a href="{% url 'horoscope-name' zodiac_sign=key %}" class="sign-link">
+                <div class='sign'>
+                    {{ value.0 }}
+                </div>
+                <div class="sign-title">
+                    {{ value.1|split|first }}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

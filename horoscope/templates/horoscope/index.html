@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="{% static 'img/python.png' %}">
+    <title>Моё Django-приложение</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <a href="{{ horoscope_url }}">
+            <img src="{% static 'img/horoscope.png' %}" height="200" title="Гороскоп" />
+            <p>Гороскоп</p>
+        </a>
+        <a href="{{ todo_url }}">
+            <img src="{% static 'img/to-do-list.png' %}"
+                height="200" title="Список дел" />
+            <p>Список дел</p>
+        </a>
+    </div>
+</body>
+
+</html>

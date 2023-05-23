@@ -1,0 +1,27 @@
+{% extends 'horoscope/base.html' %}
+
+{% load static %}
+{% load my_filter %}
+
+{% block title %}
+Стихии знаков зодиака
+{% endblock %}
+
+{% block css_add %}
+    <link rel='stylesheet' href='{% static "horoscope/css/menu.css" %}'>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% for key, value in elements.items %}
+            <a href="{% url 'type-name' element=key %} "class='sign-link'>
+                <div class='sign'>
+                    {{ value }}
+                </div>
+                <div class="sign-title">
+                    {{ key|translate_ru:"ru"|capfirst }}
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

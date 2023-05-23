@@ -1,0 +1,24 @@
+body {
+  background-image: url('../img/mp2.jpg');
+  background-size: cover;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 15px;
+  background-color: #a51fff;
+  height: 2.5rem;
+  width: 100%;
+  margin: 0;
+  padding-left: 0;
+}
+.nav-link {
+  text-decoration: none;
+  font-size: 24px;
+  color: #ffffff;
+}
+.nav-link:hover {
+  color: #e3e4e6;
+}

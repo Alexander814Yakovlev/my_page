@@ -1,0 +1,38 @@
+{% extends 'horoscope/base.html' %}
+
+{% load static %}
+{% load my_filter %}
+
+{% block title %}
+Стихия - {{ element|capfirst }}
+{% endblock %}
+
+{% block css_add %}
+    <link rel='stylesheet' href='{% static "horoscope/css/menu.css" %}'>
+{% endblock %}
+
+{% block content %}
+    {% if element in elements.keys %}
+        <div class="container">
+            {% for key, value in zodiac.items %}
+                {% if key in elements.fire and element == 'fire' or key in elements.water and element == 'water' or key in elements.air and element == 'air' or key in elements.earth and element == 'earth' %}
+                    <a href={% url 'horoscope-name' zodiac_sign=key %} class='sign-link'>
+                        <div class='sign'>
+                            {{ value.0 }}
+                        </div>
+                        <div class="sign-title">
+                            {{ value.1|split|first }}
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% else %}
+        <p style='font-size: 72px; text-align: center;'>
+            😵‍💫
+        </p><br>
+        <p style='font-size: 30px; color:#a51fff; text-align: center;'>
+            К стихии {{ element|capfirst }} не относится ни один из знаков зодиака
+        </p>
+    {% endif %}
+{% endblock %}

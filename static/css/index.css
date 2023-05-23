@@ -1,0 +1,21 @@
+body {
+  background-image: url('../img/imgpreview.jpeg');
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  text-align: center;
+  color: #ffffff;
+  font-size: 28px;
+}
